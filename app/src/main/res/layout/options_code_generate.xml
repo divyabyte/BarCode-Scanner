@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#17194c">
+
+
+    <ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:id="@+id/phone_no"
+                    android:onClick="PhoneNo"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_height="130dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <pl.droidsonroids.gif.GifImageView
+                            android:id="@+id/gifPhone"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/phone"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/gifPhone"
+                            android:layout_centerHorizontal="true"
+                            android:text="Phone No"
+                            android:textColor="#000"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:onClick="TextCode"
+                    android:id="@+id/textCode"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="130dp">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <pl.droidsonroids.gif.GifImageView
+                            android:id="@+id/gifText"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/text"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/gifText"
+                            android:layout_centerHorizontal="true"
+                            android:text="Text"
+                            android:textColor="#000"/>
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:id="@+id/web"
+                    android:onClick="Website"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_height="130dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <pl.droidsonroids.gif.GifImageView
+                            android:id="@+id/gifWeb"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/web"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/gifWeb"
+                            android:layout_centerHorizontal="true"
+                            android:text="Website"
+                            android:textColor="#000"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:onClick="Skype"
+                    android:id="@+id/skype"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="130dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <pl.droidsonroids.gif.GifImageView
+                            android:id="@+id/gifSkype"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/skype"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/gifSkype"
+                            android:layout_centerHorizontal="true"
+                            android:text="Skype"
+                            android:textColor="#000"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:id="@+id/fb"
+                    android:onClick="Facebook"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_height="130dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <pl.droidsonroids.gif.GifImageView
+                            android:id="@+id/gifFb"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/facebook"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/gifFb"
+                            android:layout_centerHorizontal="true"
+                            android:text="Facebook"
+                            android:textColor="#000"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:onClick="Instagram"
+                    android:id="@+id/insta"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="130dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <pl.droidsonroids.gif.GifImageView
+                            android:id="@+id/gifInsta"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/insta"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/gifInsta"
+                            android:layout_centerHorizontal="true"
+                            android:text="Instagram"
+                            android:textColor="#000"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:onClick="Twitter"
+                    android:layout_width="130dp"
+                    android:id="@+id/twitter"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_height="130dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <pl.droidsonroids.gif.GifImageView
+                            android:id="@+id/gifTwitter"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/twitter"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/gifTwitter"
+                            android:layout_centerHorizontal="true"
+                            android:text="Twitter"
+                            android:textColor="#000"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:onClick="Linkdein"
+                    android:layout_width="130dp"
+                    android:id="@+id/link"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="130dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <pl.droidsonroids.gif.GifImageView
+                            android:id="@+id/gifLink"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/link"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/gifLink"
+                            android:layout_centerHorizontal="true"
+                            android:text="Linkedin"
+                            android:textColor="#000"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+
+                <androidx.cardview.widget.CardView
+                    android:onClick="Email"
+                    android:id="@+id/Email"
+                    android:layout_width="130dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="130dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <pl.droidsonroids.gif.GifImageView
+                            android:id="@+id/gifEmail"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/email"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/gifEmail"
+                            android:layout_centerHorizontal="true"
+                            android:text="Email"
+                            android:textColor="#000"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="130dp"
+                    android:id="@+id/vcard"
+                    android:onClick="Vcard"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_height="130dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <pl.droidsonroids.gif.GifImageView
+                            android:id="@+id/gifVcard"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/vcard"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/gifVcard"
+                            android:layout_centerHorizontal="true"
+                            android:text="V-card"
+                            android:textColor="#000"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:onClick="Sms"
+                    android:layout_width="130dp"
+                    android:id="@+id/Sms"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_height="130dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <pl.droidsonroids.gif.GifImageView
+                            android:id="@+id/gifSms"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/sms"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_below="@+id/gifSms"
+                            android:layout_centerHorizontal="true"
+                            android:text="Sms"
+                            android:textColor="#000"/>
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -3,8 +3,15 @@
     package="com.example.barcodescanner">
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -13,33 +20,40 @@
         android:roundIcon="@mipmap/ic_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CodeGenerateActivity">
-        </activity>
-        <activity android:name=".ScanActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashWaitActivity"></activity>
+        <activity android:name=".FinalCodeActivity" />
+        <activity android:name=".PhoneNoActivity" />
+        <activity android:name=".EmailActivity" />
+        <activity android:name=".SmsActivity" />
+        <activity android:name=".VcardActivity" />
+        <activity android:name=".LinkdeinActivity" />
+        <activity android:name=".TwitterActivity" />
+        <activity android:name=".InstagramActivity" />
+        <activity android:name=".FbActivity" />
+        <activity android:name=".SkypeActivity" />
+        <activity android:name=".WebsiteActivity" />
+        <activity android:name=".TextCodeActivity" />
+        <activity android:name=".ScanResultActivity" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+        <activity android:name=".CodeGenerateActivity" />
+        <activity android:name=".ScanActivity" />
+        <activity android:name=".MainActivity" />
+
         <provider
-            android:authorities="$(applicationId).provider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="$(applicationId).provider"
             android:exported="false"
             android:grantUriPermissions="true">
-
-            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/provider_paths"/>
-
-
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
         </provider>
-
-
-        
     </application>
-
-
 
 </manifest>

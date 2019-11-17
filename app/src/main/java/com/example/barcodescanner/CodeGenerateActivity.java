@@ -1,168 +1,155 @@
 package com.example.barcodescanner;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.ContextWrapper;
+import androidx.cardview.widget.CardView;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.MediaScannerConnection;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
-import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.MultiFormatWriter;
-import com.google.zxing.WriterException;
-import com.google.zxing.common.BitMatrix;
-import com.journeyapps.barcodescanner.BarcodeEncoder;
-
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Formatter;
 
 public class CodeGenerateActivity extends AppCompatActivity {
 
-    EditText text;
-    Button get_Button;
-    ImageView imageView;
-    String text2QR;
-    ImageView imageBack;
-    ImageView imageSave;
-    ImageView imageShare;
-    Bitmap bitmap;
-
+    CardView text; CardView web; CardView Skype; CardView Fb; CardView insta; CardView Twitter;
+    CardView Link; CardView Vcard; CardView sms; CardView email; CardView phoneNo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_code_generate);
-        text = findViewById(R.id.edit_text);
-        get_Button = findViewById(R.id.gn_btn);
-        imageView = findViewById(R.id.code_image);
-        imageBack = findViewById(R.id.back);
-        imageSave = findViewById(R.id.save);
-        imageShare = findViewById(R.id.share);
+        setContentView(R.layout.options_code_generate);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+       text = findViewById(R.id.textCode);
+       web = findViewById(R.id.web);
+       Skype = findViewById(R.id.skype);
+       Fb = findViewById(R.id.fb);
+       insta = findViewById(R.id.insta);
+       Twitter = findViewById(R.id.twitter);
+       Link = findViewById(R.id.link);
+       Vcard = findViewById(R.id.vcard);
+       sms = findViewById(R.id.Sms);
+       email = findViewById(R.id.Email);
+       phoneNo = findViewById(R.id.phone_no);
 
 
-        //generate the bitmap
-        get_Button.setOnClickListener(new View.OnClickListener() {
+        //click on Text cardView
+        text.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                text2QR = text.getText().toString().trim();
-                if (text2QR != null) {
-                    MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
-                    try {
-                        BitMatrix bitMatrix = multiFormatWriter.encode(text2QR, BarcodeFormat.QR_CODE, 200, 200);
-                        BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
-                        bitmap = barcodeEncoder.createBitmap(bitMatrix);
-                        imageView.setImageBitmap(bitmap);
-
-                    } catch (WriterException e) {
-                        e.printStackTrace();
-                    }
-                    text.setVisibility(View.INVISIBLE);
-                    get_Button.setVisibility(View.INVISIBLE);
-                    imageSave.setVisibility(View.VISIBLE);
-                    imageShare.setVisibility(View.VISIBLE);
-
-                }
-            }
-
-        });
-
-
-        //back press
-        imageBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();;
+                Intent i = new Intent(CodeGenerateActivity.this, TextCodeActivity.class);
+                startActivity(i);
             }
         });
 
-        //shave bitmap image to internal storage of your device
-        imageSave.setOnClickListener(new View.OnClickListener() {
+        //click on Website cardView
+        web.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                File pictureFile = getOutputMediaFile();
-                if (pictureFile == null) {
-                    Log.d("Tag",
-                            "Error creating media file, check storage permissions: ");// e.getMessage());
-                    return;
-                }
-                try {
-                    FileOutputStream fos = new FileOutputStream(pictureFile);
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 90, fos);
-                    fos.close();
-                    Toast.makeText(getApplicationContext(),"save",Toast.LENGTH_LONG).show();
-
-                } catch (FileNotFoundException e) {
-                    Log.d("Tag", "File not found: " + e.getMessage());
-                } catch (IOException e) {
-                    Log.d("Tag", "Error accessing file: " + e.getMessage());
-                }
+                Intent i = new Intent(CodeGenerateActivity.this, WebsiteActivity.class);
+                startActivity(i);
             }
         });
 
-        //share bitmap to all apps
-        imageShare.setOnClickListener(new View.OnClickListener() {
+        //click on Skype cardView
+        Skype.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent i = new Intent(CodeGenerateActivity.this, SkypeActivity.class);
+                startActivity(i);
+            }
+        });
 
-                String bitmapPath = MediaStore.Images.Media.insertImage(getContentResolver(), bitmap,"title", null);
-                Uri bitmapUri = Uri.parse(bitmapPath);
+        //click on Fb cardView
+        Fb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(CodeGenerateActivity.this, FbActivity.class);
+                startActivity(i);
+            }
+        });
 
-                Intent intent = new Intent(Intent.ACTION_SEND);
-                intent.setType("image/png");
-                intent.putExtra(Intent.EXTRA_STREAM, bitmapUri);
-                startActivity(Intent.createChooser(intent, "Share"));
+        //click on Instagram cardView
+        insta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(CodeGenerateActivity.this, InstagramActivity.class);
+                startActivity(i);
+            }
+        });
+
+        //click on Twitter cardView
+        Twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                    Intent i = new Intent(CodeGenerateActivity.this, TwitterActivity.class);
+                startActivity(i);
+            }
+        });
+
+        //click on Linkdein cardView
+        Link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(CodeGenerateActivity.this, LinkdeinActivity.class);
+                startActivity(i);
+            }
+        });
+
+        //click on Vcard cardView
+        Vcard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(CodeGenerateActivity.this, VcardActivity.class);
+                startActivity(i);
+            }
+        });
+
+        //click on Sms cardView
+        sms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(CodeGenerateActivity.this, SmsActivity.class);
+                startActivity(i);
+            }
+        });
+
+        //click on Email cardView
+        email.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(CodeGenerateActivity.this, EmailActivity.class);
+                startActivity(i);
+            }
+        });
+
+        //click on Phone No cardView
+        phoneNo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(CodeGenerateActivity.this, PhoneNoActivity.class);
+                startActivity(i);
             }
         });
 
 
     }
 
-
-    //path for saving image(bitmap)
-    private  File getOutputMediaFile(){
-
-        File mediaStorageDir = new File(Environment.getExternalStorageDirectory()
-                + "/Android/data/"
-                + getApplicationContext().getPackageName()
-                + "/Files");
-
-        if (! mediaStorageDir.exists()){
-            if (! mediaStorageDir.mkdirs()){
-                return null;
-            }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // handle arrow click here
+        if (item.getItemId() == android.R.id.home) {
+            finish(); // close this activity and return to preview activity (if there is any)
         }
 
-        String timeStamp = new SimpleDateFormat("ddMMyyyy_HHmm").format(new Date());
-        File mediaFile;
-        String mImageName="MI_"+ timeStamp +".jpg";
-        mediaFile = new File(mediaStorageDir.getPath() + File.separator + mImageName);
-        return mediaFile;
+        return super.onOptionsItemSelected(item);
     }
-
 }
+
+
+
+
 
 
 

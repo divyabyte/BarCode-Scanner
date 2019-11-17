@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TextCodeActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="15dp"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/arrowSkype"
+            android:layout_marginLeft="15dp"
+            android:src="@drawable/ic_arrow_back_black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skype"
+            android:textColor="#000"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageView
+            android:id="@+id/doneSkype"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_done_black" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"></View>
+
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/skypee"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="Write Skype ID"
+        android:textColor="#071644"
+        android:layout_marginTop="20dp"
+        android:textSize="15dp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#D2000000"
+        android:text="live:"
+        android:layout_marginTop="20dp"
+        android:id="@+id/skypeValue"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"/>
+
+
+
+
+
+</LinearLayout>
